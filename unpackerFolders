@@ -1,0 +1,5 @@
+#!/bin/bash
+
+mv git\ scripts ..
+mv homescripts ..
+mv xfce\ wsl ..
