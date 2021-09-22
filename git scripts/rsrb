@@ -1,0 +1,29 @@
+#!/bin/bash
+path=$(head -n 1 ".path")
+
+read -p "Enter commit..."
+nano .commit-basher
+filename=".commit-basher"
+commit=$(head -n 1 $filename)
+
+cd $path
+
+git fetch
+
+branch=$(git branch --show-current) 
+
+if [[ -z "$branch" ]]; then
+	echo "HEAD is detached, exiting"
+	exit
+fi
+
+if [ origin/devel == origin/$branch ] || [ origin/master == origin/$branch ]; then
+	echo "your remote branch is devel or master"
+	exit
+fi
+
+hash=$(git merge-base $branch origin/devel)
+
+git reset --soft $hash
+git commit -m "$commit" && git push -f
+git rebase origin/devel && git push -f

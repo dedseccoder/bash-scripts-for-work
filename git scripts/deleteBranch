@@ -1,0 +1,16 @@
+#!/bin/bash
+
+path=$(head -n 1 ".path")
+
+cd $path
+git branch -a
+cd
+
+read -p "Enter branch name..."
+filename=".branch-name"
+nano .branch-name
+branch=$(head -n 1 $filename)
+
+cd $path
+
+git branch -D $branch && git push -d origin $branch

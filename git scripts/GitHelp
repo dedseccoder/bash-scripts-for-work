@@ -1,0 +1,14 @@
+Найти корневой коммит ветки:
+git merge-base <branch-to-merge> <branch-where-merge-will-go>
+
+Очистить локальный гит от мусора:
+git gс
+
+Очистить локальный гит от веток удаленных в репозитории:
+git remote prune origin
+
+Посмотреть все доступные локальные и удаленные ветки:
+git branch -a
+
+Все о работе с ветками:
+https://www.hostinger.com/tutorials/how-to-rename-a-git-branch/

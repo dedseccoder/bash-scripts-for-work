@@ -1,0 +1,12 @@
+#!/bin/bash
+
+path=$(head -n 1 ".path")
+
+cd $path
+pwd
+git branch -a
+git gc
+git fetch --prune origin
+git branch -f devel origin/devel
+echo " "
+git branch -a

@@ -1,0 +1,19 @@
+#!/bin/bash
+
+path=$(head -n 1 ".path")
+
+read -p "Enter commit..."
+filename=".commit-basher"
+nano .commit-basher
+commit=$(head -n 1 $filename)
+
+echo "---------------------------------------------------------------------------------------------------------------"
+echo "$commit"
+echo "---------------------------------------------------------------------------------------------------------------"
+
+cd $path
+git status
+git stage *
+git status
+read
+git commit -m "$commit" && git push
