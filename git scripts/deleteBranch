@@ -3,6 +3,10 @@
 path=$(head -n 1 ".path")
 
 cd $path
+echo ""
+pwd
+echo ""
+
 git branch -a
 cd
 
