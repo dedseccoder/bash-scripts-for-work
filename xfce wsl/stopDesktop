@@ -2,5 +2,5 @@
 #!/bin/bash
 
 cd
-sudo ../../etc/init.d/xrdp stop
+sudo /etc/init.d/xrdp stop
 

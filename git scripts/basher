@@ -2,10 +2,7 @@
 
 path=$(head -n 1 ".path")
 
-read -p "Enter commit..."
-filename=".commit-basher"
-nano .commit-basher
-commit=$(head -n 1 $filename)
+commit=$1
 
 echo "---------------------------------------------------------------------------------------------------------------"
 echo "$commit"

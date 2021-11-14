@@ -2,6 +2,6 @@
 #!/bin/bash
 
 cd
-sudo ../../etc/init.d/xrdp restart
+sudo /etc/init.d/xrdp restart
 echo "localhost:3390"
 
