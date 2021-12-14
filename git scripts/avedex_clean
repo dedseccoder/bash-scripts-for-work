@@ -10,6 +10,15 @@ echo ""
 git branch -a
 git gc
 git fetch --prune origin
-git branch -f devel origin/devel
-echo " "
+
+branch=$(git branch --show-current)
+
+if [ $branch == devel ]
+then
+	git reset --hard origin/devel 
+else
+	git branch -f devel origin/devel
+fi
+
+echo ""
 git branch -a
